@@ -1,7 +1,10 @@
-h1 API
-ol
-	for post in body
-		li
-			h1 #{post.title}
-			p #{post.description}
+doctype
+html
+	head
+	body
+		h1 Clima de Monterrey
+		p Temperatura: #{forecast.currently.temperature}
+		p Humedad: #{forecast.currently.humidity}
+		p Tiempo Ahora: #{forecast.currently.summary}
+			
 

@@ -2,8 +2,10 @@
 
 var express = require('express'); 
 var request = require('request');
+
 // Urls for App Center REST functions
-var url = 'https://zackio.herokuapp.com/posts';
+var apikey = '5d7ef6bae3b0c6d5c3109da5d61767fc';
+var url = 'https://api.darksky.net/forecast/'+ apikey +'/25.6667,-100.3167';
 var app = express();
 
 app.set('view engine', 'jade');
@@ -22,7 +24,7 @@ app.get('/api', function(req, res){
     json: true
   }, function (error, response, body) {
       if (!error && response.statusCode === 200) {
-        res.render('index',)
+        res.render('index',{forecast:body})
     }
   })
 });
